@@ -1,4 +1,7 @@
-{
+
+node171829-trial-and-error.jcloud.ik-server.com {
+	root * /var/www
+	file_server
 	debug
 	email tech@annemarie-schwarzenbach.ch
 }
