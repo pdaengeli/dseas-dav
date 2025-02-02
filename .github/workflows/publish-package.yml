@@ -30,8 +30,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-
-        with:
           build-args: |
             "CADDY_VERSION=${{ github.event.inputs.version != '' && format('{0}{1}', github.event.inputs.version, '-') || '' }}"
           push: true
