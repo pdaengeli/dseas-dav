@@ -1,0 +1,18 @@
+{
+	debug
+	email tech@annemarie-schwarzenbach.ch
+}
+
+# configure webdav module
+{
+    order webdav before file_server
+}
+
+# set up webdav for the dav.annemarie-schwarzenbach.ch host
+dav.annemarie-schwarzenbach.ch {
+    root * /data/webdav
+    basicauth {
+        user1 hashed-password
+    }
+    webdav
+}
