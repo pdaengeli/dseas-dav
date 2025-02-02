@@ -2,6 +2,7 @@
 FROM caddy:2-builder AS builder
 
 # Install the caddy-dav plugin
+RUN xcaddy build --with github.com/caddy-dns/infomaniak
 RUN xcaddy build --with github.com/mholt/caddy-webdav
 
 # Use the official Caddy image as the base for the final image
