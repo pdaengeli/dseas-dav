@@ -1,12 +1,13 @@
-# globally
 {
-	acme_dns infomaniak {env.INFOMANIAK_API_TOKEN}
 	email tech@annemarie-schwarzenbach.ch
 }
 
 node171829-trial-and-error.jcloud.ik-server.com {
 	root * /srv
 	file_server
+	tls {
+		dns infomaniak {env.INFOMANIAK_API_TOKEN}
+	}
 }
 
 
