@@ -9,7 +9,8 @@
 }
 
 # set up webdav for the dav.annemarie-schwarzenbach.ch host
-dav.annemarie-schwarzenbach.ch {
+# dav.annemarie-schwarzenbach.ch {
+node171829-trial-and-error.jcloud.ik-server.com {
     root * /data/webdav
     basicauth {
         user1 hashed-password
