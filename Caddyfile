@@ -2,7 +2,7 @@
 	email tech@annemarie-schwarzenbach.ch
 }
 
-node171829-trial-and-error.jcloud.ik-server.com {
+dav.annemarie-schwarzenbach.ch {
 	root * /srv
 	file_server
 	tls {
