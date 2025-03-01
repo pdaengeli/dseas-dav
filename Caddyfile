@@ -2,28 +2,28 @@
 	email tech@annemarie-schwarzenbach.ch
 }
 
-dav.annemarie-schwarzenbach.ch {
-	root * /srv
-	file_server
-	tls {
-		dns infomaniak {env.INFOMANIAK_API_TOKEN}
-	}
-}
+#dav.annemarie-schwarzenbach.ch {
+#	root * /srv
+#	file_server
+#	tls {
+#		dns infomaniak {env.INFOMANIAK_API_TOKEN}
+#	}
+#}
 
 
 # email tech@annemarie-schwarzenbach.ch
 
 ## configure webdav module
-#{
-#    order webdav before file_server
-#}
-#
-## set up webdav for the dav.annemarie-schwarzenbach.ch host
-## dav.annemarie-schwarzenbach.ch {
+{
+    order webdav before file_server
+}
+
+# set up webdav for the dav.annemarie-schwarzenbach.ch host
+# dav.annemarie-schwarzenbach.ch {
 #node171829-trial-and-error.jcloud.ik-server.com {
-#    root * /data/webdav
-#    basicauth {
-#        user1 hashed-password
-#    }
-#    webdav
-#}
+    root * /data/webdav
+    basicauth {
+        user1 hashed-password
+    }
+    webdav
+}
