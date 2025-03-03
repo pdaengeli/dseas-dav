@@ -6,10 +6,7 @@ EXPOSE 80
 EXPOSE 443
 
 # Create directory for private information (serving as a mount-point)
-RUN ["mkdir", "-p", "/var/lib/dav/private"]
-
-# Remove /user.passwd file
-RUN ["rm", "-f", "/user.passwd"]
+# RUN ["mkdir", "-p", "/var/lib/dav/private"]
 
 # Create symlink to /user.passwd (so user info is sourced externally)
 RUN ["ln", "-sf", "/var/lib/dav/private/user.passwd", "/user.passwdxyz"]
