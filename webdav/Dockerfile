@@ -12,4 +12,4 @@ RUN ["mkdir", "-p", "/var/lib/dav/private"]
 RUN ["rm", "-f", "/user.passwd"]
 
 # Create symlink to /user.passwd (so user info is sourced externally)
-RUN ["ln", "-s", "/var/lib/dav/private/user.passwd", "/user.passwdxyz"]
+RUN ["ln", "-sf", "/var/lib/dav/private/user.passwd", "/user.passwd"]
