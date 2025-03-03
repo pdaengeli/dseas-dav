@@ -32,7 +32,10 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./webdav
-          build-args: |
-            "CADDY_VERSION=${{ github.event.inputs.version != '' && format('{0}{1}', github.event.inputs.version, '-') || '' }}"
+#          build-args: |
+#            "CADDY_VERSION=${{ github.event.inputs.version != '' && format('{0}{1}', github.event.inputs.version, '-') || '' }}"
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/dseas-dav/dseas-dav:latest
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/dseas-dav/dseas-dav:latest
+            ${{ secrets.DOCKER_USERNAME }}/webdav:latest
+            ${{ secrets.DOCKER_USERNAME }}/webdav:${{ steps.date.outputs.today }}
