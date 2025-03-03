@@ -1,5 +1,5 @@
 # Use the apachewebdav image from Docker Hub
-FROM apachewebdav:apachewebdav AS webdav
+FROM apachewebdav:latest AS webdav
 
 # Expose the necessary ports
 EXPOSE 80
