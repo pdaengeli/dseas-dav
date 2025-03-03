@@ -9,7 +9,7 @@ EXPOSE 443
 RUN ["mkdir", "-p", "/var/lib/dav/private"]
 
 # Remove /user.passwd file
-RUN ["rm", "/user.passwd"]
+RUN ["rm", "-f", "/user.passwd"]
 
 # Create symlink to /user.passwd (so user info is sourced externally)
 RUN ["ln", "-s", "/var/lib/dav/private/user.passwd", "/user.passwd"]
