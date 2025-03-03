@@ -1,4 +1,4 @@
-name: Publish dseas-dav reverse proxy image
+name: Publish dseas-reverseproxy image
 
 on:
   push:

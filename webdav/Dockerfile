@@ -5,6 +5,8 @@ FROM apachewebdav/apachewebdav:latest
 EXPOSE 80
 EXPOSE 443
 
-# Set the entry point for the container to start apachewebdav
-#ENTRYPOINT []
-#CMD [ "httpd-foreground" ]
+RUN \
+    # Create directory for private information (serving as a mount-point)
+    mkdir -p "/var/lib/dav/private"; \
+    # Create symlink to /user.passwd (so user info is sourced externally)
+    ln -s /user.passwd /var/lib/dav/private/user.passwd
