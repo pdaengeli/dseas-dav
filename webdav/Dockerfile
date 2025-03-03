@@ -9,4 +9,4 @@ RUN \
     # Create directory for private information (serving as a mount-point)
     mkdir -p "/var/lib/dav/private"; \
     # Create symlink to /user.passwd (so user info is sourced externally)
-    ln -s /user.passwd /var/lib/dav/private/user.passwd
+    ln -s "/user.passwd" "/var/lib/dav/private/user.passwd";
