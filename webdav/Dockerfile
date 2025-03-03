@@ -6,4 +6,5 @@ EXPOSE 80
 EXPOSE 443
 
 # Set the entry point for the container to start apachewebdav
-ENTRYPOINT ["AUTH_TYPE=Basic", "-v /data/webdav:/var/lib/dav/data:rw", "-p 80:80"]
+#ENTRYPOINT []
+CMD [ "httpd-foreground" ]
