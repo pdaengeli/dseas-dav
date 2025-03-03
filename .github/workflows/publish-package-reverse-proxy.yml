@@ -1,13 +1,10 @@
-name: Publish Docker image
+name: Publish dseas-dav reverse proxy image
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Caddy specific version (default to get latest)'
 
 jobs:
   build:
@@ -31,9 +28,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
-          context: ./webdav
-#          build-args: |
-#            "CADDY_VERSION=${{ github.event.inputs.version != '' && format('{0}{1}', github.event.inputs.version, '-') || '' }}"
+          context: ./reverse-proxy
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/dseas-dav/dseas-dav:latest
+            ghcr.io/${{ github.repository_owner }}/dseas/dseas-reverseproxy:latest
