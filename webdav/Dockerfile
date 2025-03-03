@@ -5,5 +5,5 @@ FROM apachewebdav:apachewebdav AS webdav
 EXPOSE 80
 EXPOSE 443
 
-# Set the entry point for the container to start Caddy
+# Set the entry point for the container to start apachewebdav
 ENTRYPOINT ["--restart always", "'AUTH_TYPE'='Basic'", "-v '/data/webdav':'/var/lib/dav/data':'rw'", "-p '80:80'", "'apachewebdav/apachewebdav'"]
